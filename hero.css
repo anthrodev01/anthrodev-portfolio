@@ -1,0 +1,73 @@
+.hero {
+  /* h1 line 1 starts 97px below the header at 1390px */
+  padding-top: clamp(2.5rem, 6.98vw, 6.0625rem);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 59.4% 1fr;
+}
+
+.hero__title {
+  grid-column: 1 / -1;
+  font-size: var(--fs-hero);
+  line-height: 1.125;
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--ink);
+  /* nudge optical left edge to match the artboard (glyph side-bearing) */
+  margin-left: -0.01em;
+}
+.hero__title .line {
+  display: inline;
+}
+
+.hero__lede {
+  grid-column: 2;
+  margin-top: -0.6em;
+  margin-right: -0.5em;
+  font-size: var(--fs-lede);
+  line-height: 1.5;
+  letter-spacing: -0.006em;
+  color: var(--text-muted);
+}
+
+.hero__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2.5rem, 4.68vw, 4.06rem);
+}
+
+/* Section tagline under the hero */
+.work-intro {
+  padding-top: clamp(3.5rem, 7.7vw, 6.65rem);
+  padding-bottom: clamp(3rem, 6.08vw, 5.28rem);
+  text-align: center;
+  padding-inline: var(--gutter);
+}
+.work-intro__text {
+  font-size: var(--fs-tagline);
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.013em;
+  color: var(--text-soft);
+  text-wrap: balance;
+}
+
+@media (min-width: 481px) {
+  .hero__title .line,
+  .contact__title .line {
+    display: block;
+  }
+}
+
+@media (max-width: 899px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+  .hero__lede {
+    grid-column: 1;
+    margin: clamp(1.25rem, 3vw, 1.75rem) 0 0;
+    max-width: 34ch;
+  }
+}
